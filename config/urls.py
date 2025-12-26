@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework.authtoken.views import obtain_auth_token
 from django.conf.urls.static import static
-from accounts.views import RegisterView
+from accounts.views import DeleteMyAccountView, RegisterView
 
 
 
@@ -14,6 +14,7 @@ urlpatterns = [
     path('api/', include('blog.urls')),
     path('api/register/', RegisterView.as_view()),
     path('api/login/', obtain_auth_token),
+    path("api/me/delete/", DeleteMyAccountView.as_view()),
 
 ]
 if settings.DEBUG:

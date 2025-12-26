@@ -27,3 +27,14 @@ class RegisterView(APIView):
         Token.objects.create(user=user)
 
         return Response({"message": "Utilisateur créé"}, status=status.HTTP_201_CREATED)
+    
+from rest_framework.permissions import IsAuthenticated
+class DeleteMyAccountView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def delete(self, request):
+        request.user.delete()
+        return Response(
+            {"detail": "Compte et articles supprimés"},
+            status=status.HTTP_204_NO_CONTENT
+        )
