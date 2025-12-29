@@ -1,1 +1,9 @@
-GET http://127.0.0.1:8000/api/articles/
+PATCH http://127.0.0.1:8000/api/profile/
+Authorization: Token 3edbd1c304da20c3b3cb5dd8c8b728239885c1b6
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+------WebKitFormBoundary
+Content-Disposition: form-data; name="bio"
+
+Je suis Judi, utilisateur existant. Bio ajoutée via REST Client.
+------WebKitFormBoundary--
